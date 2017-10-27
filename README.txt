@@ -18,7 +18,7 @@ Select the appropriate snippet from the drop down and insert it at the end of yo
 
 == Installation ==
 
-1. Upload `html-snippets.php` to the `/wp-content/plugins/` directory
+1. Upload `/html-snippets/` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Install via Github Updater if you want live update notices
 
