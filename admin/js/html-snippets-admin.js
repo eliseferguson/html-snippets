@@ -29,4 +29,38 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+jQuery(document).ready(function($) {
+	 // Click the insert snippet button
+	 $("#insert-snippet-button").click(function(){
+
+		var snippetId = $("#snippet-listing").val();
+
+		if (snippetId==0) {
+			alert('Select a snippet from the dropdown before clicking the "Insert" button.');
+		} else {
+
+			var data = {
+				action: 'load_snippet_content',
+				snippet_id: snippetId
+			};
+
+			$.post(ajaxurl, data, function(response) {
+				response = eval('(' + response + ')');
+
+				if (response.result!='success') {
+					alert("Unexpected error attempting to insert snippet: " + response.result);
+				} else {
+					var content = $("<div/>").html(response.content).text();  // HTML decode
+					tinyMCE.activeEditor.setContent(tinyMCE.activeEditor.getContent()+content);
+					// console.log( jQuery('.wp-editor-container textarea.wp-editor-area').html() );
+					// jQuery('.wp-editor-container textarea.wp-editor-area').html( startingHtml + content );
+
+					//TODO: egf - only adds in the Visual editor mode, only adds to the end, only adds if you select the text area first
+				}
+			});
+		}
+		return false;
+	});
+});
+
 })( jQuery );

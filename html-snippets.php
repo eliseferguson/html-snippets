@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       HTML Snippets
  * Plugin URI:        https://github.com/eliseferguson/html-snippets
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Create and insert HTML snippets into your WP pages or posts
  * Version:           1.0.0
  * Author:            Elise Ferguson
  * Author URI:        http://www.saturdaynightbattleship.com
