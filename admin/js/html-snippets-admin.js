@@ -51,11 +51,17 @@ jQuery(document).ready(function($) {
 					alert("Unexpected error attempting to insert snippet: " + response.result);
 				} else {
 					var content = $("<div/>").html(response.content).text();  // HTML decode
-					tinyMCE.activeEditor.setContent(tinyMCE.activeEditor.getContent()+content);
-					// console.log( jQuery('.wp-editor-container textarea.wp-editor-area').html() );
-					// jQuery('.wp-editor-container textarea.wp-editor-area').html( startingHtml + content );
 
-					//TODO: egf - only adds in the Visual editor mode, only adds to the end, only adds if you select the text area first
+				    if (jQuery("#wp-content-wrap").hasClass("tmce-active")){
+						tinyMCE.activeEditor.focus();
+				        var startinContent = tinyMCE.activeEditor.getContent();
+						tinyMCE.activeEditor.setContent(tinyMCE.activeEditor.getContent() + content);
+				    }else{
+				        var startingContent = jQuery('.wp-editor-container textarea.wp-editor-area').html();
+						jQuery('.wp-editor-container textarea.wp-editor-area').html( startingContent + content )
+				    }
+
+					//TODO: egf - only appends to the end, only adds if you select the text area first in Visual editor
 				}
 			});
 		}
