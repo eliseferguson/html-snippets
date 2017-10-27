@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: egf
 Donate link: http://www.saturdaynightbattleship.com
-Tags: comments, spam
+Tags: html, snippets
 Requires at least: 3.0.1
 Tested up to: 4.8.2
 Stable tag: 1.0.0
