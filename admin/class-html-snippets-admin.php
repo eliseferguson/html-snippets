@@ -158,7 +158,6 @@ class Html_Snippets_Admin {
 		);
 	}
 	public static function display_meta_box( $post ) {
-		echo "<h1>meta box here</h1>";
 		$query = new WP_Query( array(
 			'post_type' => 'snippet',
 
@@ -186,7 +185,7 @@ HTML;
 	}
 	static function load_snippet_content() {
 		if (empty($_POST['snippet_id'])) {
-			
+
 			$content = null;
 		} else {
 			$post = get_post($_POST['snippet_id']);
